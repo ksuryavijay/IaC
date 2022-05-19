@@ -3,10 +3,13 @@ terraform {
   required_providers {
     oci = {
 		version = ">= 4.0.0"
-		auth = "InstancePrincipal"
-		region = var.region
     }
   }
+}
+
+provider oci {
+	auth = "InstancePrincipal"
+	region = var.region
 }
 
 
