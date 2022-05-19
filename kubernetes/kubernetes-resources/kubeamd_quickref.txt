@@ -5,4 +5,5 @@ kubeadm token create --print-join-command
 discovery token hash:
     openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //
 
-
+firewall-port-on-ubuntu:
+    https://www.cyberciti.biz/faq/how-to-open-firewall-port-on-ubuntu-linux-12-04-14-04-lts/
