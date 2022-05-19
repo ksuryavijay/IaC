@@ -59,3 +59,8 @@ variable subnet_cidr_block {
   type = string
   default = "10.10.0.0/24"
 }
+
+variable create_internet_gateway {
+  type = boolean
+  default = false
+}

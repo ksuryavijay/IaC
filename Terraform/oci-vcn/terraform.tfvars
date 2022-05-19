@@ -14,6 +14,8 @@ vcn_name = "prac-vcn"
 vcn_dns_label = "pracvcn"
 vcn_cidr_block = "10.10.0.0/16"
 
+subnet_cidr_block = "10.10.0.0/24"
+
+create_internet_gateway = "true"
 internet_gateway_display_name = "intgt"
 
-subnet_cidr_block = "10.10.0.0/24"
