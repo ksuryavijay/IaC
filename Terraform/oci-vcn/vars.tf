@@ -30,7 +30,7 @@ variable compartment_id {
   default = "ocid1.compartment.oc1..aaaaaaaawrvaz3qenxkroaq6zxnqfndsqvm4nylcxlnhpyp7mrbbo2pzhboa" 
 }
 
-variable "vnc_name" {
+variable "vcn_name" {
   type = string
   default = "test_vcn"
 }
