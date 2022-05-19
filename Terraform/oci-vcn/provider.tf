@@ -1,14 +1,12 @@
-provider oci {
-	auth = "InstancePrincipal"
-	region = var.region
-}
-
 terraform {
+  required_version = ">= 0.12.6"
   required_providers {
-    mycloud = {
-      source  = "oracle/oci"
-      version = "~> 1.0"
+    oci = {
+		version = ">= 4.0.0"
+		auth = "InstancePrincipal"
+		region = var.region
     }
   }
 }
+
 
