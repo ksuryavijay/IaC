@@ -61,6 +61,6 @@ variable subnet_cidr_block {
 }
 
 variable create_internet_gateway {
-  type = boolean
+  type = bool
   default = false
 }
