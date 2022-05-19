@@ -1,4 +1,5 @@
 #OCI resources
+#Latest comments on oci vcn resources tf script
 
 resource "oci_core_vcn" "test_vcn" {
     #Required
