@@ -31,16 +31,16 @@ variable compartment_id {
 }
 
 variable "vnc_name" {
-  type = "string"
+  type = string
   default = "test_vcn"
 }
 
 variable "vcn_dns_label" {
-  type = "string"
+  type = string
   default = "test_vcn"
 }
 
 variable "vcn_cidr_block" {
-  type = "string"
+  type = string
   default = "10.10.0.0/16"
 }
