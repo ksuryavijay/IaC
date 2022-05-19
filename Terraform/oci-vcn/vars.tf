@@ -44,3 +44,18 @@ variable "vcn_cidr_block" {
   type = string
   default = "10.10.0.0/16"
 }
+
+variable internet_gateway_display_name {
+  type = string
+  default = "ig"
+}
+
+variable label_prefix {
+  type = string
+  default = "none"
+}
+
+variable subnet_cidr_block {
+  type = string
+  default = "10.10.0.0/24"
+}

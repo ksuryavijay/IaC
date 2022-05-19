@@ -7,7 +7,13 @@ api_private_key_path = "/home/opc/.oci/user_api_private.pem"
 region = "us-ashburn-1"
 
 compartment_id = "ocid1.compartment.oc1..aaaaaaaawrvaz3qenxkroaq6zxnqfndsqvm4nylcxlnhpyp7mrbbo2pzhboa" 
-vnc_name = "prac-vcn"
+
+label_prefix = "none"
+
+vcn_name = "prac-vcn"
 vcn_dns_label = "pracvcn"
 vcn_cidr_block = "10.10.0.0/16"
 
+internet_gateway_display_name = "intgt"
+
+subnet_cidr_block = "10.10.0.0/24"
