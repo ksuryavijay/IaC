@@ -1,3 +1,4 @@
+#OCI resources
 
 resource "oci_core_vcn" "test_vcn" {
     #Required
