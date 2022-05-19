@@ -1,3 +1,3 @@
-provider oci {
+provider oracle/oci {
 	region = var.region
 }
