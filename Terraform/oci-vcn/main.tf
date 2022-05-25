@@ -35,4 +35,6 @@ resource "oci_core_subnet" "test_subnet" {
     compartment_id = var.compartment_id
     vcn_id = oci_core_vcn.test_vcn.id
 
+    display_name = var.subnet_name
+
 }

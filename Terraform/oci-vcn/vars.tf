@@ -60,6 +60,11 @@ variable subnet_cidr_block {
   default = "10.10.0.0/24"
 }
 
+variable subnet_name {
+  type = string
+  default = "test_sn"
+}
+
 variable create_internet_gateway {
   type = bool
   default = false
