@@ -31,8 +31,9 @@ variable "user_id" {
 }
 
 variable compartment_id { 
-  default = "ocid1.compartment.oc1..aaaaaaaawrvaz3qenxkroaq6zxnqfndsqvm4nylcxlnhpyp7mrbbo2pzhboa" 
-  default = ""
+  description = "The OCI compartment id to create resources"
+  type        = string
+  default = "ocid1.compartment.oc1" 
 }
 
 variable "vcn_name" {
