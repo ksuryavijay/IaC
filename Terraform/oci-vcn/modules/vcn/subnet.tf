@@ -7,7 +7,7 @@ resource "oci_core_subnet" "test_subnet" {
     vcn_id = oci_core_vcn.test_vcn.id
 
     display_name = var.subnet_name
-    security_list_ids = oci_core_security_list.test_security_list.id
+    security_list_ids = [oci_core_security_list.test_security_list.id]
 }
 
 
