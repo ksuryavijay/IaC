@@ -40,8 +40,8 @@ resource "oci_core_security_list" "test_security_list" {
         stateless = false
         tcp_options {
             #Optional
-            max = "-1"
-            min = "-1"
+            max = "80"
+            min = "80"
             /*source_port_range {
                 #Required
                 max = ""
