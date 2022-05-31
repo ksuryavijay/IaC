@@ -11,6 +11,8 @@ module "vcn" {
 
     subnet_cidr_block = var.subnet_cidr_block
     subnet_name = var.subnet_name
+
+    region = var.region
 }
 
 resource "oci_core_internet_gateway" "ig" {

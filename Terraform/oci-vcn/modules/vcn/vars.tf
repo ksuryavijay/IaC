@@ -42,3 +42,9 @@ variable create_internet_gateway {
   type = bool
   default = false
 }
+
+variable "region" {
+  # List of regions: https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#ServiceAvailabilityAcrossRegions
+  description = "The oci region where resources will be created."
+  type        = string
+}
