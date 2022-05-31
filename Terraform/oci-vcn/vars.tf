@@ -3,22 +3,26 @@
 variable "api_fingerprint" {
   description = "Fingerprint of oci api private key."
   type        = string
+  default     = ""
 }
 
 variable "api_private_key_path" {
   description = "The path to oci api private key."
   type        = string
+  default     = ""
 }
 
 variable "region" {
   # List of regions: https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#ServiceAvailabilityAcrossRegions
   description = "The oci region where resources will be created."
   type        = string
+  default     = ""
 }
 
 variable "tenancy_id" {
   description = "The tenancy id in which to create the resources."
   type        = string
+  default = ""
 }
 
 variable "user_id" {
@@ -28,6 +32,7 @@ variable "user_id" {
 
 variable compartment_id { 
   default = "ocid1.compartment.oc1..aaaaaaaawrvaz3qenxkroaq6zxnqfndsqvm4nylcxlnhpyp7mrbbo2pzhboa" 
+  default = ""
 }
 
 variable "vcn_name" {
