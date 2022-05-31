@@ -2,7 +2,7 @@
 #Latest comments on oci vcn resources tf script
 
 
-resource "vcn"{
+module "vcn" {
     source = "./modules/vcn" 
 
     vcn_name = var.vcn_name
