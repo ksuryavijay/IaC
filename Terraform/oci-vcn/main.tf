@@ -9,7 +9,7 @@ resource "oci_core_internet_gateway" "ig" {
   #freeform_tags = var.freeform_tags
   #defined_tags = var.defined_tags
 
-  vcn_id = oci_core_vcn.test_vcn.id
+  vcn_id = data.oci_core_vcn.test_vcn.vcn_id
 
   count = var.create_internet_gateway == true ? 1 : 0
 }
