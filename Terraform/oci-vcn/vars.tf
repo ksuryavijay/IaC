@@ -28,6 +28,7 @@ variable "tenancy_id" {
 variable "user_id" {
   description = "The id of the user that terraform will use to create the resources."
   type        = string
+  default = ""
 }
 
 variable compartment_id { 
