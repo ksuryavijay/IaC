@@ -16,9 +16,6 @@ resource "oci_core_security_list" "test_security_list" {
     compartment_id = var.compartment_id
     vcn_id = oci_core_vcn.test_vcn.id
 
-    #Optional
-    defined_tags = {"Operations.CostCenter"= "001"}
-
     display_name = "apigtw_sl"
     egress_security_rules {
         #Required
