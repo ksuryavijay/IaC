@@ -7,7 +7,7 @@ resource "oci_core_subnet" "test_subnet" {
     vcn_id = oci_core_vcn.test_vcn.id
 
     display_name = var.subnet_name
-    security_list_ids = oci_core_security_lists.test_security_list.id
+    security_list_ids = oci_core_security_list.test_security_list.id
 }
 
 
@@ -18,8 +18,8 @@ resource "oci_core_security_list" "test_security_list" {
 
     #Optional
     defined_tags = {"Operations.CostCenter"= "001"}
-    
-    display_name = var.security_list_display_name
+
+    display_name = "apigtw_sl"
     egress_security_rules {
         #Required
         destination = "0.0.0.0/0"
