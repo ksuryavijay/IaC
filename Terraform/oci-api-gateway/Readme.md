@@ -1,0 +1,1 @@
+ OCI API Gateway Terraform script
