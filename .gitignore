@@ -1,0 +1,15 @@
+Terraform/oci-vcn/.terraform/providers/registry.terraform.io/oracle/oci/4.78.0/linux_amd64/README.md
+Terraform/oci-vcn/.terraform/providers/registry.terraform.io/oracle/oci/4.78.0/linux_amd64/LICENSE.md
+Terraform/oci-vcn/.terraform/providers/registry.terraform.io/oracle/oci/4.78.0/linux_amd64/CHANGELOG.md
+Terraform/oci-vcn/.terraform/modules/modules.json
+Terraform/oci-vcn/.terraform/providers/registry.terraform.io/oracle/oci/4.78.0/linux_amd64/terraform-provider-oci_v4.78.0
+Terraform/oci-vcn/.terraform.lock.hcl
+Terraform/oci-api-gateway/.terraform/providers/registry.terraform.io/oracle/oci/4.79.0/linux_amd64/terraform-provider-oci_v4.79.0
+Terraform/oci-api-gateway/.terraform/providers/registry.terraform.io/oracle/oci/4.79.0/linux_amd64/README.md
+Terraform/oci-api-gateway/.terraform/providers/registry.terraform.io/oracle/oci/4.79.0/linux_amd64/LICENSE.md
+Terraform/oci-api-gateway/.terraform/providers/registry.terraform.io/oracle/oci/4.79.0/linux_amd64/CHANGELOG.md
+Terraform/oci-api-gateway/.terraform/modules/modules.json
+Terraform/oci-api-gateway/terraform.tfstate.backup
+Terraform/oci-api-gateway/terraform.tfstate
+Terraform/oci-api-gateway/.terraform.lock.hcl
+kubernetes/kubernetes-client/java
