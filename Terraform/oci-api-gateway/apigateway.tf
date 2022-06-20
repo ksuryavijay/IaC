@@ -56,16 +56,93 @@ resource oci_apigateway_deployment demo-apigwt-dply {
 
       content{        
         methods = routes.value.methods
-        path = routes.value.path
-        backend {          
-          connect_timeout_in_seconds 	= var.connect_timeout_in_seconds
-          is_ssl_verify_disabled  	= var.is_ssl_verify_disabled
-          read_timeout_in_seconds 	= var.read_timeout_in_seconds
-          send_timeout_in_seconds 	= var.send_timeout_in_seconds
+        path = routes.value.path     
+        
+        backend{   
+            type = routes.value.backend.type
+            
+            #properties for HTTP_BACKEND
+            url  = routes.value.backend.type == "HTTP_BACKEND" ? routes.value.backend.url : null
+            connect_timeout_in_seconds 	= routes.value.backend.type == "HTTP_BACKEND" ? var.connect_timeout_in_seconds : null
+            is_ssl_verify_disabled  	= routes.value.backend.type == "HTTP_BACKEND" ? var.is_ssl_verify_disabled : null
+            read_timeout_in_seconds 	= routes.value.backend.type == "HTTP_BACKEND" ? var.read_timeout_in_seconds : null
+            send_timeout_in_seconds 	= routes.value.backend.type == "HTTP_BACKEND" ? var.send_timeout_in_seconds : null      
 
-          type = routes.value.backend.type
-          url  = routes.value.backend.url
+            #properties for ORACLE_FUNCTIONS_BACKEND
+            function_id  = routes.value.backend.type == "ORACLE_FUNCTIONS_BACKEND" ? routes.value.backend.function_id : null
+
+            # properties for STOCK_RESPONSE_BACKEND
+            status = routes.value.backend.type == "STOCK_RESPONSE_BACKEND" ? "200" : null
+            headers {
+                    name = "Content-Type"
+                    value = "application/json"
+                    }
+            body = routes.value.backend.type == "STOCK_RESPONSE_BACKEND" ? "{\"username\": \"john.doe\"}" : null
         }
+
+        /*
+        backend {  
+            
+            connect_timeout_in_seconds 	= var.connect_timeout_in_seconds
+            is_ssl_verify_disabled  	= var.is_ssl_verify_disabled
+            read_timeout_in_seconds 	= var.read_timeout_in_seconds
+            send_timeout_in_seconds 	= var.send_timeout_in_seconds
+
+            type = routes.value.backend.type
+            url  = routes.value.backend.url          
+          */
+          /*
+          # check for backend type
+          for_each = routes.value.backend.type == "HTTP_BACKEND" ? {
+            connect_timeout_in_seconds 	= var.connect_timeout_in_seconds
+            is_ssl_verify_disabled  	= var.is_ssl_verify_disabled
+            read_timeout_in_seconds 	= var.read_timeout_in_seconds
+            send_timeout_in_seconds 	= var.send_timeout_in_seconds
+
+            type = routes.value.backend.type
+            url  = routes.value.backend.url
+          } : { routes.value.backend.type == "ORACLE_FUNCTIONS_BACKEND" ? {
+                  type = routes.value.backend.type
+                  "functionId": routes.value.backend.function_id
+                }: {}
+              }
+          
+          } : routes.value.backend.type == "STOCK_RESPONSE_BACKEND" ?
+            type = routes.value.backend.type
+            "status": 200,
+            "headers": [{
+              "name": "Content-Type",
+              "value": "application/json"
+            }],
+            "body" : "{\"username\": \"john.doe\"}"
+          } : {}         
+          
+          
+          for_each = routes.value.backend.type == "HTTP_BACKEND" ? {
+            connect_timeout_in_seconds 	= var.connect_timeout_in_seconds
+            is_ssl_verify_disabled  	= var.is_ssl_verify_disabled
+            read_timeout_in_seconds 	= var.read_timeout_in_seconds
+            send_timeout_in_seconds 	= var.send_timeout_in_seconds
+
+            type = routes.value.backend.type
+            url  = routes.value.backend.url
+          }: ""
+          for_each = routes.value.backend.type == "ORACLE_FUNCTIONS_BACKEND" ? {            
+            type = routes.value.backend.type
+            "functionId": routes.value.backend.function_id
+          } : ""
+
+          for_each = routes.value.backend.type == "STOCK_RESPONSE_BACKEND" ? {            
+            type = routes.value.backend.type
+            "status": 200,
+            "headers": [{
+              "name": "Content-Type",
+              "value": "application/json"
+            }],
+            "body" : "{\"username\": \"john.doe\"}"
+          } : "" 
+          */
+        //}
       }    
     }
 

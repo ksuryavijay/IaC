@@ -23,16 +23,22 @@ is_ssl_verify_disabled  = "false"
 read_timeout_in_seconds = "10"
 send_timeout_in_seconds = "10"
 
+
+#  Supported API backend type
+#  - ORACLE_FUNCTIONS_BACKEND
+#  - HTTP_BACKEND
+#  - STOCK_RESPONSE_BACKEND
+
 deployments = [
   {
-    name = "messages-v1"
+    name = "v1"
     path_prefix = "v1"
     routes = [
       {      
-        path = "/message01"
+        path = "/exmpl"
         backend = {
           type = "HTTP_BACKEND"
-          url  = "http://hostname:port/message01"
+          url  = "https://example.com/"
         }
         methods = ["GET","POST"]
       },
@@ -40,21 +46,28 @@ deployments = [
         path = "/message02"
         backend = {
           type = "HTTP_BACKEND"
-          url  = "http://hostname:port/message02"
+          url  = "http://10.10.10.10:3000/bot/message"
         }
         methods = ["POST"]
+      },
+      {      
+        path = "/message02"
+        backend = {
+          type = "STOCK_RESPONSE_BACKEND"
+        }
+        methods = ["GET"]
       }
     ]
   },
   {
-    name = "messages-v2"
+    name = "v2"
     path_prefix = "v2"
     routes = [
       {      
         path = "/message01"
         backend = {
           type = "HTTP_BACKEND"
-          url  = "http://hostname:port/message01"
+          url  = "http://10.10.10.10:3000/bot/message"
         }
         methods = ["GET"]
       },
@@ -62,7 +75,7 @@ deployments = [
         path = "/message02"
         backend = {
           type = "HTTP_BACKEND"
-          url  = "http://hostname:port/message02"
+          url  = "http://10.10.10.10:3000/bot/message"
         }
         methods = ["POST"]
       },
@@ -70,9 +83,9 @@ deployments = [
         path = "/message03"
         backend = {
           type = "HTTP_BACKEND"
-          url  = "http://hostname:port/message03"
+          url  = "http://10.10.10.10:3000/bot/message"
         }
-        methods = ["GET","POST"]
+        methods = ["POST"]
       }
     ]
   }
