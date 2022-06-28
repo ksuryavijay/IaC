@@ -2,8 +2,9 @@ terraform {
   required_version = ">= 0.12.6"
   required_providers {
     oci = {
-		source  = "oracle/oci"
-		version = ">= 4.0.0"
+      source                = "oracle/oci"
+      version               = ">= 4.67.3"
+      configuration_aliases = [oci.home]
     }
   }
 }
@@ -11,6 +12,7 @@ terraform {
 provider oci {
 	#auth = "InstancePrincipal"
 	region = var.region
+	alias  = "home"
 }
 
 
