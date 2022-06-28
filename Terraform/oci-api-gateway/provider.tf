@@ -1,7 +1,3 @@
-provider oci {
-	region = var.region
-	alias  = "home"
-}
 
 terraform {
   required_version = ">= 1.0.0"
@@ -9,7 +5,12 @@ terraform {
     oci = {
       source                = "oracle/oci"
       version               = ">= 4.67.3"
-      configuration_aliases = [oci.home]
+      #configuration_aliases = [oci.home]
     }
   }
+}
+
+provider oci {
+	region = var.region
+	#alias  = "home"
 }

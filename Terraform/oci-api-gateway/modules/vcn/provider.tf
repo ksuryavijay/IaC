@@ -5,7 +5,7 @@ terraform {
     oci = {
       source                = "oracle/oci"
       version               = ">= 4.67.3"
-      configuration_aliases = [oci.home]
+      #configuration_aliases = [oci.home]
     }
   }
 }
@@ -13,7 +13,7 @@ terraform {
 provider oci {
 	#auth = "InstancePrincipal"
 	region = var.region
-	alias  = "home"
+	#alias  = "home"
 }
 
 
