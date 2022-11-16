@@ -11,8 +11,8 @@ import uuid
 import base64
 from pathlib import Path
 
-userhome = sys.argv[1]
-print('userhome'+ userhome)
+#userhome = sys.argv[1]
+#print('userhome'+ userhome)
 print ("str(Path.home()) "+ str(Path.home()))
 
 #config = oci.config.from_file(file_location=userhome+'/.oci/config', profile_name='DEFAULT')
