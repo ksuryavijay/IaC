@@ -13,8 +13,10 @@ from pathlib import Path
 
 userhome = sys.argv[1]
 print('userhome'+ userhome)
+print ("str(Path.home()) "+ str(Path.home()))
 
-config = oci.config.from_file(file_location=userhome+'/.oci/config', profile_name='DEFAULT')
+#config = oci.config.from_file(file_location=userhome+'/.oci/config', profile_name='DEFAULT')
+config = oci.config.from_file(file_location=str(Path.home())+'/.oci/config', profile_name='DEFAULT')
 
 secrets_client = oci.secrets.SecretsClient(config)
 result = uuid.uuid4()
