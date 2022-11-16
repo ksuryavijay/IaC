@@ -1,10 +1,4 @@
 # OCI Authentication details
-/*
-tenancy_id     = "ocid1.tenancy."
-user_id        = "ocid1.user."
-api_fingerprint      = ""
-api_private_key_path = "/home/opc/"
-*/
 region = "us-ashburn-1"
 
 compartment_id = "ocid1.compartment.oc1..aaaaaaaawrvaz3qenxkroaq6zxnqfndsqvm4nylcxlnhpyp7mrbbo2pzhboa" 
@@ -19,4 +13,3 @@ subnet_name = "prac-sn"
 
 create_internet_gateway = "true"
 internet_gateway_display_name = "intgt"
-
