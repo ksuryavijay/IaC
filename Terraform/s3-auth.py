@@ -3,7 +3,7 @@ import uuid
 import base64
 from pathlib import Path
 
-config = oci.config.from_file()
+config = oci.config.from_file(file_location=str(Path.home())+'/.oci/config', profile_name='DEFAULT')
 
 secrets_client = oci.secrets.SecretsClient(config)
 result = uuid.uuid4()
