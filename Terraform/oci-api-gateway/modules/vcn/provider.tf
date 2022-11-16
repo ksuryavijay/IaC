@@ -4,14 +4,14 @@ terraform {
   required_providers {
     oci = {
       source                = "oracle/oci"
-      version               = ">= 4.67.3"
+      version               = "4.82.0"
       #configuration_aliases = [oci.home]
     }
   }
 }
 
 provider oci {
-	auth = "InstancePrincipal"
+	#auth = "InstancePrincipal"
 	region = var.region
 	#alias  = "home"
 }

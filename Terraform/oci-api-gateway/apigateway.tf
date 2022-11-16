@@ -12,11 +12,11 @@ resource oci_apigateway_gateway "test-apigwt" {
   response_cache_details {
     #authentication_secret_id = <<Optional value not found in discovery>>
     #authentication_secret_version_number = <<Optional value not found in discovery>>
-    #connect_timeout_in_ms = <<Optional value not found in discovery>>
-    #is_ssl_enabled = <<Optional value not found in discovery>>
-    #is_ssl_verify_disabled = <<Optional value not found in discovery>>
-    #read_timeout_in_ms = <<Optional value not found in discovery>>
-    #send_timeout_in_ms = <<Optional value not found in discovery>>
+    connect_timeout_in_ms = var.connect_timeout_in_seconds
+    is_ssl_enabled = var.is_ssl_enabled
+    is_ssl_verify_disabled = var.is_ssl_verify_disabled
+    read_timeout_in_ms = var.read_timeout_in_ms
+    send_timeout_in_ms = var.send_timeout_in_ms
     #servers = <<Optional value not found in discovery>>
     type = "NONE"
   }
@@ -31,7 +31,8 @@ resource oci_apigateway_gateway "test-apigwt" {
 # Create api deployment resources
 resource oci_apigateway_deployment demo-apigwt-dply {
   compartment_id = var.compartment_ocid
-  gateway_id  = oci_apigateway_gateway.test-apigwt.id
+  #gateway_id  = oci_apigateway_gateway.test-apigwt.id
+  gateway_id  = data.oci_apigateway_gateway.test_api.id
   
   #iterate over list of deployments
   for_each = {
@@ -47,9 +48,16 @@ resource oci_apigateway_deployment demo-apigwt-dply {
         log_level  = "INFO"
       }
     }
-    request_policies {     
-    }    
-    
+    request_policies {      
+      dynamic "usage_plans"{
+        for_each = length(each.value.token_location) > 0 ? [1]: []      
+
+        content {
+          token_locations = each.value.token_location
+        }
+      }       
+    }
+
     //iterate over routes for each deployment
     dynamic "routes" {
       for_each = each.value.routes

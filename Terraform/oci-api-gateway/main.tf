@@ -12,3 +12,11 @@ module "vcn" {
 
     region = var.region
 }
+
+locals {
+    subscriber_usgpln_ids = flatten(data.oci_apigateway_usage_plans.test_usage_plans.usage_plan_collection[*].items[*].id)
+}
+
+output "all_usgplns_out"{
+    value = local.subscriber_usgpln_ids
+}

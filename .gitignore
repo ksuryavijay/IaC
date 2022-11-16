@@ -13,3 +13,9 @@ Terraform/oci-api-gateway/terraform.tfstate.backup
 Terraform/oci-api-gateway/terraform.tfstate
 Terraform/oci-api-gateway/.terraform.lock.hcl
 kubernetes/kubernetes-client/java
+Terraform/oci-api-gateway/.terraform/providers/registry.terraform.io/hashicorp/null/3.1.1/linux_amd64/terraform-provider-null_v3.1.1_x5
+Terraform/oci-api-gateway/.terraform/providers/registry.terraform.io/oracle/oci/4.82.0/linux_amd64/CHANGELOG.md
+Terraform/oci-api-gateway/.terraform/providers/registry.terraform.io/oracle/oci/4.82.0/linux_amd64/LICENSE.md
+Terraform/oci-api-gateway/.terraform/providers/registry.terraform.io/oracle/oci/4.82.0/linux_amd64/README.md
+Terraform/oci-api-gateway/.terraform/providers/registry.terraform.io/oracle/oci/4.82.0/linux_amd64/terraform-provider-oci_v4.82.0
+.gitignore

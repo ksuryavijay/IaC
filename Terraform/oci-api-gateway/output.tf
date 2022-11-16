@@ -62,3 +62,13 @@ output "routes" {
   value = null_resource.routes
 }
 */
+
+output "dep_usg_pln"{
+    value = { 
+        for_each = {
+            for dep in data.oci_apigateway_deployments.apigw_deployments.deployment_collection: 
+                #dep.id => dep.specification.logging_policies
+                dep.id => dep.specification
+        }            
+    }
+}

@@ -90,9 +90,14 @@ variable connect_timeout_in_seconds {
   default = "60"
 }
 
-variable is_ssl_verify_disabled {
+variable is_ssl_enabled {
   type = string 
   default = "false"
+}
+
+variable is_ssl_verify_disabled {
+  type = string 
+  default = "true"
 }
 
 variable read_timeout_in_seconds {
@@ -105,12 +110,41 @@ variable send_timeout_in_seconds {
   default = "10"
 }
 
+variable "usage_plan_deployments" {
+  type = list
+  default = ["dep01", "dep02", "dep03"]
+}
+
+variable "usage_plan_entitlements_name" {
+  type = string
+  default = "apigw_usagepln_entlmnt"
+}
+
+variable "usage_plan_entitlements_description" {
+  type = string
+  default = "apigw_usagepln_entlmnt_description"
+}
+
+variable "usage_plan_display_name" {
+  type = string
+  default = "apigw_usagepln"
+}
+
+
+
+/*
+"request.headers[token]"
+"request.query[token]"
+"request.auth[Token]"
+"request.path[TOKEN]"
+*/
 variable "deployments" {
   #type = map
   default = {
     deploy1 = {
       name = "demo-delpoy"
       path_prefix = "/v1"
+      token_location =  ["request.headers[Authorization]"]
       route = [
         {      
           path = "/message01"

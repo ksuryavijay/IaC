@@ -1,0 +1,17 @@
+
+{
+    "variable": {
+        "subscriber_display_name": {
+            "default": "apigw_subscribers"
+        },
+
+        "clients": {
+            "default": {
+                "name": "client_01",
+                "token": "token_client_01"
+            }
+        }
+    }
+}
+
+  
