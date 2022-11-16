@@ -1,9 +1,21 @@
+"""
+Usage details:
+  python3 s3-auth.py <arg1>
+  
+  eg: python3 s3-auth.py /home/opc
+"""
+
+
 import oci
 import uuid
 import base64
 from pathlib import Path
 
-config = oci.config.from_file(file_location=str(Path.home())+'/.oci/config', profile_name='DEFAULT')
+userhome = sys.argv[1]
+print('userhome'+ userhome)
+
+
+config = oci.config.from_file(file_location=userhome+'/.oci/config', profile_name='DEFAULT')
 
 secrets_client = oci.secrets.SecretsClient(config)
 result = uuid.uuid4()
