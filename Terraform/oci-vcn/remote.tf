@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket   = "tf_store"
-    key      = "jenkins"
+    key      = "jenkins/terraform.tfstate"
     region   = "us-ashburn-1"
     endpoint = "https://frrudica1wgd.compat.objectstorage.us-ashburn-1.oraclecloud.com"
     #shared_credentials_file     = "keys/terraform-states_bucket_credentials"
