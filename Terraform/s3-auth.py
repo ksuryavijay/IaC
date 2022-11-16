@@ -5,7 +5,7 @@ Usage details:
   eg: python3 s3-auth.py /home/opc
 """
 
-
+import sys
 import oci
 import uuid
 import base64
@@ -13,7 +13,6 @@ from pathlib import Path
 
 userhome = sys.argv[1]
 print('userhome'+ userhome)
-
 
 config = oci.config.from_file(file_location=userhome+'/.oci/config', profile_name='DEFAULT')
 
