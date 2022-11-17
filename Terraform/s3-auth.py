@@ -22,7 +22,7 @@ print ("str(Path.home()) "+ str(Path.home()))
 #Authentication using Instance Principal
 signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner()
 
-secrets_client = oci.secrets.SecretsClient(config, signer)
+secrets_client = oci.secrets.SecretsClient(config={}, signer)
 result = uuid.uuid4()
 secret_id = "ocid1.vaultsecret.oc1.iad.amaaaaaazjgvoqyafuyhoiy35cosfhlc475mbihrim2imlmw7dlxrdaewhda"
 
