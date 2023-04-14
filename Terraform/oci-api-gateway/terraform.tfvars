@@ -1,15 +1,15 @@
 
 region = "eu-marseille-1"
-compartment_ocid = "ocid1.compartment.oc1..aaaaaaaawrvaz3qenxkroaq6zxnqfndsqvm4nylcxlnhpyp7mrbbo2pzhboa" 
+compartment_ocid = "" 
 
 label_prefix = "none"
 
 //Network details
 vcn_name = "prac-vcn"
 vcn_dns_label = "pracvcn"
-vcn_cidr_block = "10.12.0.0/16"
+vcn_cidr_block = ""
 
-subnet_cidr_block = "10.12.0.0/24"
+subnet_cidr_block = ""
 subnet_name = "prac-sn"
 
 create_internet_gateway = "true"
