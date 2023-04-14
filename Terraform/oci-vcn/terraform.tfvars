@@ -1,7 +1,7 @@
 # OCI Authentication details
 region = "us-ashburn-1"
 
-compartment_id = "ocid1.compartment.oc1..aaaaaaaawrvaz3qenxkroaq6zxnqfndsqvm4nylcxlnhpyp7mrbbo2pzhboa" 
+compartment_id = "" 
 label_prefix = "none"
 
 vcn_name = "prac-vcn-00"
