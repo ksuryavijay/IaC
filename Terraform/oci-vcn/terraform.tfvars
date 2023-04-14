@@ -6,9 +6,9 @@ label_prefix = "none"
 
 vcn_name = "prac-vcn-00"
 vcn_dns_label = "pracvcn"
-vcn_cidr_block = "10.12.0.0/16"
+vcn_cidr_block = ""
 
-subnet_cidr_block = "10.12.0.0/24"
+subnet_cidr_block = ""
 subnet_name = "prac-sn"
 
 create_internet_gateway = "true"
